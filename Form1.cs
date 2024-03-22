@@ -111,7 +111,11 @@ namespace JTAGTool
                 }
                 else if (checkBox3.Checked) // BO I
                 {
-                    uint[] addresses = { 0xC3381BE8 };
+                    uint[] addresses = { 0xC3381BE8, 0xC3381BF8, 0xC3381C00 };
+                    for(int i =  0; i < addresses.Length; i++)
+                    {
+                        console.SetMemory(addresses[i], new byte[] { 0x27, 0x0F });
+                    }
                 } 
             }
         }
