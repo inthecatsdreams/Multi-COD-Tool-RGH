@@ -96,7 +96,7 @@ namespace JTAGTool
         {
             while (true)
             {
-                if (checkBox1.Checked) // BO 2
+                if (checkBox1.Checked) // BO II
                 {
 
                     uint[] addresses = { 0xC3781E3C,0xC3781E44,0xC3781E40 };
@@ -105,10 +105,14 @@ namespace JTAGTool
                         console.SetMemory(addresses[i], new byte[] { 0x27, 0x0F });
                     }
                 }
-                else if (checkBox2.Checked)
+                else if (checkBox2.Checked) // BO I
                 {
                     console.SetMemory(0xC35126DC, new byte[] { 0x64 });
                 }
+                else if (checkBox3.Checked) // BO I
+                {
+                    uint[] addresses = { 0xC3381BE8 };
+                } 
             }
         }
 
@@ -122,15 +126,15 @@ namespace JTAGTool
             console.SetMemory(0xC33833B4, new byte[] { 0x00, 0x0F, 0x42, 0x40 });
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            
-            
-        }
-
+        
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
