@@ -116,7 +116,15 @@ namespace JTAGTool
                     {
                         console.SetMemory(addresses[i], new byte[] { 0x27, 0x0F });
                     }
-                } 
+                }
+                else if (checkBox4.Checked)
+                {
+                    //todo
+                }
+                else if (checkBox5.Checked)
+                {
+                    console.SetMemory(0xC470A44C, new byte[] { 0x00, 0xFF,0xFF, 0xFF  });
+                }
             }
         }
 
@@ -139,6 +147,11 @@ namespace JTAGTool
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            console.SetMemory(0xC458CCBC, new byte[] { 0x00, 0x0F, 0x42, 0x40 });
         }
     }
 }
