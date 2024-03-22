@@ -119,7 +119,11 @@ namespace JTAGTool
                 }
                 else if (checkBox4.Checked)
                 {
-                    //todo
+                    uint[] adresses = { 0xC458B28C, 0xC458B270 };
+                    for(int i =0; i < adresses.Length; i++)
+                    {
+                        console.SetMemory(adresses[i], new byte[] { 0x00,0xFF,0xFF, 0xFF });
+                    }
                 }
                 else if (checkBox5.Checked)
                 {
