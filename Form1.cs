@@ -96,11 +96,14 @@ namespace JTAGTool
         {
             while (true)
             {
-                if (checkBox1.Checked)
+                if (checkBox1.Checked) // BO 2
                 {
-                    console.SetMemory(0xC3781E3C, new byte[] { 0x27, 0x0F });//primary ammo
-                    console.SetMemory(0xC3781E44, new byte[] { 0x27, 0x0F });//secondary ammo
-                    console.SetMemory(0xC3781E40, new byte[] { 0x05 }); //grenades
+
+                    uint[] addresses = { 0xC3781E3C,0xC3781E44,0xC3781E40 };
+                    for (int i = 0; i < addresses.Length; i++)
+                    {
+                        console.SetMemory(addresses[i], new byte[] { 0x27, 0x0F });
+                    }
 
 
                 }
@@ -115,6 +118,17 @@ namespace JTAGTool
         private void button2_Click(object sender, EventArgs e)
         {
             console.SetMemory(0xC33833B4, new byte[] { 0x00, 0x0F, 0x42, 0x40 });
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            
+            
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
