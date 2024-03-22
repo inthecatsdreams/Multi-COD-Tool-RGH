@@ -104,8 +104,10 @@ namespace JTAGTool
                     {
                         console.SetMemory(addresses[i], new byte[] { 0x27, 0x0F });
                     }
-
-
+                }
+                else if (checkBox2.Checked)
+                {
+                    console.SetMemory(0xC35126DC, new byte[] { 0x64 });
                 }
             }
         }
