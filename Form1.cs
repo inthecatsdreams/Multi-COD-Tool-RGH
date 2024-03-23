@@ -88,7 +88,7 @@ namespace JTAGTool
 
         private void button7_Click(object sender, EventArgs e)
         {
-            xboxConsole.CallVoid(0x8242FB70, new object[] { -1, -1,  "v cg_fov 120" });
+            xboxConsole.CallVoid(0x8242FB70, new object[] { -1, -1, "q cg_fov 0-9999" });
         }
 
         
@@ -172,6 +172,58 @@ namespace JTAGTool
             console.SetMemory(codPoints, BitConverter.GetBytes(999999));
 
                 //BitConverter.GetBytes(desiredValue);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            uint prestige = 0x8307B76C + 0x3A90C;
+            uint prestigeToken = 0x8307B76C + 0x3C76B;
+            int prestigeInt = 10;
+            int tokenInt = 80;
+            uint rankXP = 0x8307B76C + 0x3AB2C;
+            uint token = 0x8307B76C + 0x3C7C9;
+            
+            
+            //console.SetMemory(prestige, BitConverter.GetBytes(prestigeInt));
+            //console.SetMemory(token, BitConverter.GetBytes(tokenInt));
+            //console.SetMemory(rankXP, BitConverter.GetBytes(9999999));
+            
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            console.SetMemory(0x821154A4, new byte[] { 0x60, 0x00, 0x00, 0x00 });
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            console.SetMemory(0x821614D4, new byte[] { 0x60, 0x00, 0x00, 0x00 });
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            console.SetMemory(0x8210E58C, new byte[] { 0x3B, 0x80, 0x00, 0x01 });
+        }
+        uint ReverseBytes(uint val) //gotta convert all stat values to small endian
+        {
+            byte[] toBytes = BitConverter.GetBytes(val);
+            Array.Reverse(toBytes);
+            return BitConverter.ToUInt32(toBytes, 0);
+        }
+        public uint[] accolades = new uint[47];
+        void SetAccoladesValues(uint value)
+        {
+            
+            for (int i = 0; i < 47; i++)
+                accolades[i] = ReverseBytes(value);
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            
+            SetAccoladesValues(9999);
+            for (uint i = 0; i > 47; i++)
+                xboxConsole.WriteUInt32(0x830A60D0 + i, accolades[i]);
         }
     }
 }
