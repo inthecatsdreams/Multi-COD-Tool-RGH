@@ -9,5 +9,5 @@
 
 # TODO
 - add recovery for MW3
-- add recovery for BO II
+- ~~add recovery for BO II~~
 - add recovery for MW2
