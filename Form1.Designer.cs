@@ -55,6 +55,8 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.button13 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -62,6 +64,7 @@
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -153,10 +156,11 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Location = new System.Drawing.Point(218, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(473, 170);
+            this.tabControl1.Size = new System.Drawing.Size(559, 180);
             this.tabControl1.TabIndex = 10;
             // 
             // tabPage1
@@ -182,7 +186,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(386, 144);
+            this.tabPage2.Size = new System.Drawing.Size(465, 144);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "BO I Zombies";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -227,7 +231,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(386, 144);
+            this.tabPage3.Size = new System.Drawing.Size(465, 144);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "WAW Zombies";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -268,7 +272,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(386, 144);
+            this.tabPage4.Size = new System.Drawing.Size(465, 144);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "BO 1 Recovery";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -333,7 +337,7 @@
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(75, 23);
             this.button11.TabIndex = 3;
-            this.button11.Text = "button11";
+            this.button11.Text = "UAV";
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
@@ -347,11 +351,32 @@
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.button13);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(551, 154);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "BO II Recovery";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(7, 22);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(203, 55);
+            this.button13.TabIndex = 0;
+            this.button13.Text = "max prestige + level";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(694, 188);
+            this.ClientSize = new System.Drawing.Size(789, 220);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -369,6 +394,7 @@
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -402,6 +428,8 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.Button button13;
     }
 }
 

@@ -225,5 +225,15 @@ namespace JTAGTool
             for (uint i = 0; i > 47; i++)
                 xboxConsole.WriteUInt32(0x830A60D0 + i, accolades[i]);
         }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            uint prestige = 0x843491A4;
+            int prestigeInt = 11;
+            uint rankXP = 0x843491BC;
+            console.SetMemory(prestige, BitConverter.GetBytes(prestigeInt));
+            console.SetMemory(rankXP, BitConverter.GetBytes(9999999));
+            
+        }
     }
 }
