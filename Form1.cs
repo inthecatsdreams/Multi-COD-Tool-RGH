@@ -157,5 +157,21 @@ namespace JTAGTool
         {
             console.SetMemory(0xC458CCBC, new byte[] { 0x00, 0x0F, 0x42, 0x40 });
         }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            uint prestige = 0x84085720 + 0x90DD;
+            int prestigeInt = 15;
+            uint rank = 0x84085720 + 0x90E1;
+            int rankInt = 50;
+            uint rankXP = 0x84085720 + 0x90E5;
+            uint codPoints = 0x84085720 + 0x8CD1;
+            console.SetMemory(prestige, BitConverter.GetBytes(prestigeInt));
+            console.SetMemory(rank, BitConverter.GetBytes(rankInt));
+            console.SetMemory(rankXP, BitConverter.GetBytes(9999999));
+            console.SetMemory(codPoints, BitConverter.GetBytes(999999));
+
+                //BitConverter.GetBytes(desiredValue);
+        }
     }
 }
