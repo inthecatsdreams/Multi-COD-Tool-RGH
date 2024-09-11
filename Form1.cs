@@ -80,7 +80,7 @@ namespace JTAGTool
                 label5.ForeColor = Color.Green;
                 
                 string[] subs = xboxConsole.RunningProcessInfo.ProgramName.ToString().Split('\\');
-                label6.Text = subs[5];
+                label6.Text = subs[5] + " - "+ subs[6];
                 
                 label6.ForeColor = Color.Green;
 
@@ -198,6 +198,11 @@ namespace JTAGTool
             label3.ForeColor = Color.Green;
             label4.ForeColor = Color.Green;
             label5.ForeColor = Color.Green;
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void button10_Click(object sender, EventArgs e)
