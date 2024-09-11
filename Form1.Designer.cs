@@ -58,12 +58,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.fovSlider = new System.Windows.Forms.TrackBar();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fovSlider)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -173,7 +176,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(622, 154);
+            this.tabPage2.Size = new System.Drawing.Size(511, 331);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "BO I Zombies";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -212,13 +215,15 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label7);
+            this.tabPage3.Controls.Add(this.fovSlider);
             this.tabPage3.Controls.Add(this.checkBox5);
             this.tabPage3.Controls.Add(this.checkBox4);
             this.tabPage3.Controls.Add(this.button3);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(622, 154);
+            this.tabPage3.Size = new System.Drawing.Size(511, 331);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "WAW Zombies";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -379,6 +384,25 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "label6";
             // 
+            // fovSlider
+            // 
+            this.fovSlider.Location = new System.Drawing.Point(16, 112);
+            this.fovSlider.Maximum = 120;
+            this.fovSlider.Minimum = 65;
+            this.fovSlider.Name = "fovSlider";
+            this.fovSlider.Size = new System.Drawing.Size(324, 45);
+            this.fovSlider.TabIndex = 3;
+            this.fovSlider.Value = 65;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(13, 85);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 13);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "FOV Slider";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -400,6 +424,7 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.fovSlider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -436,6 +461,8 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TrackBar fovSlider;
     }
 }
 

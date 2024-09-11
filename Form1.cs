@@ -78,7 +78,10 @@ namespace JTAGTool
                 label3.ForeColor = Color.Green;
                 label4.ForeColor = Color.Green; 
                 label5.ForeColor = Color.Green;
-                label6.Text = xboxConsole.RunningProcessInfo.ProgramName.ToString();
+                
+                string[] subs = xboxConsole.RunningProcessInfo.ProgramName.ToString().Split('\\');
+                label6.Text = subs[5];
+                
                 label6.ForeColor = Color.Green;
 
             }
