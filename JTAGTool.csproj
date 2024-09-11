@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>JTAGTool</RootNamespace>
     <AssemblyName>JTAGTool</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -73,7 +73,7 @@
     <Reference Include="xdevkit, Version=2.0.21076.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>False</EmbedInteropTypes>
-      <HintPath>..\..\..\Desktop\XboxDev\References\xdevkit.dll</HintPath>
+      <HintPath>..\..\..\Desktop\XENON DEV\References\xdevkit.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
