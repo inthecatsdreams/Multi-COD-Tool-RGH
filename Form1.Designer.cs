@@ -302,6 +302,7 @@
             this.fovSlider.Size = new System.Drawing.Size(324, 45);
             this.fovSlider.TabIndex = 3;
             this.fovSlider.Value = 65;
+            this.fovSlider.Scroll += new System.EventHandler(this.fovSlider_Scroll);
             // 
             // checkBox5
             // 

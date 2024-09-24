@@ -124,7 +124,7 @@ namespace JTAGTool
                 }
                 else if (checkBox2.Checked) // BO I
                 {
-                    console.SetMemory(0xC35126DC, new byte[] { 0x64 });
+                    console.SetMemory(0xC35126DC, new    byte[] { 0x64 });
                 }
                 else if (checkBox3.Checked) // BO I
                 {
@@ -172,7 +172,8 @@ namespace JTAGTool
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            console.SetMemory(0xC458CCBC, new byte[] { 0x00, 0x0F, 0x42, 0x40 });
+            console.SetMemory(0xC458CCBC, BitConverter.GetBytes(999999));
+            //console.Notify(XRPC.XNotiyLogo.NEW_MESSAGE_LOGO, "Shoot a zombie for the score to change");
         }
 
        
@@ -201,6 +202,17 @@ namespace JTAGTool
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            uint points = 0xC9D50948;
+            console.SetMemory(points, BitConverter.GetBytes(999999));
+        }
+
+        private void fovSlider_Scroll(object sender, EventArgs e)
         {
 
         }
