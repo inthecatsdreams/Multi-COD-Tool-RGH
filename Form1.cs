@@ -78,11 +78,19 @@ namespace JTAGTool
                 label3.ForeColor = Color.Green;
                 label4.ForeColor = Color.Green; 
                 label5.ForeColor = Color.Green;
-                
                 string[] subs = xboxConsole.RunningProcessInfo.ProgramName.ToString().Split('\\');
-                label6.Text = subs[5] + " - "+ subs[6];
+                if(subs.Length == 6)
+                {
+                    label6.Text = "Current process: Xbox 360 Dashboard";
+                    label6.ForeColor = Color.Green;
+                }
+                else
+                {
+                    label6.Text = "Current process: " + subs[5] + " " + subs[6];
+                    label6.ForeColor = Color.Green;
+                }
+
                 
-                label6.ForeColor = Color.Green;
 
             }
 
@@ -146,6 +154,7 @@ namespace JTAGTool
                 {
                     console.SetMemory(0xC470A44C, new byte[] { 0x00, 0xFF,0xFF, 0xFF  });
                 }
+                
             }
         }
 
@@ -199,6 +208,16 @@ namespace JTAGTool
             label3.ForeColor = Color.Green;
             label4.ForeColor = Color.Green;
             label5.ForeColor = Color.Green;
+            string[] subs = xboxConsole.RunningProcessInfo.ProgramName.ToString().Split('\\');
+            if (subs.Length == 6)
+            {
+                label6.Text = "Current process: Xbox 360 Dashboard";
+            }
+            else
+            {
+                label6.Text = "Current process: " + subs[5] + " " + subs[6];
+            }
+
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
@@ -215,6 +234,23 @@ namespace JTAGTool
         private void fovSlider_Scroll(object sender, EventArgs e)
         {
 
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            uint godMode = 0x1786406;
+            console.SetMemory(godMode, new byte[] {0xff, 0xff,0xff });
+        }
+
+        private void button7_Click_2(object sender, EventArgs e)
+        {
+            uint laser = 0x82255E1C;
+            console.SetMemory(laser, new byte[] { 0x43, 0x11, 0x00, 0x01 });
+        }
+
+        private void checkBox6_CheckedChanged(object sender, EventArgs e)
+        {
+            xboxConsole.WriteBool(0x823229D0, true);
         }
 
         private void button10_Click(object sender, EventArgs e)

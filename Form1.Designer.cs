@@ -60,6 +60,8 @@
             this.button9 = new System.Windows.Forms.Button();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.button7 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -212,6 +214,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button7);
+            this.tabPage1.Controls.Add(this.checkBox6);
             this.tabPage1.Controls.Add(this.checkBox1);
             this.tabPage1.Controls.Add(this.button6);
             this.tabPage1.Controls.Add(this.button4);
@@ -405,6 +409,27 @@
             this.tabPage6.Text = "BO II OFF HOST";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Location = new System.Drawing.Point(383, 10);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(70, 17);
+            this.checkBox6.TabIndex = 9;
+            this.checkBox6.Text = "God Mod";
+            this.checkBox6.UseVisualStyleBackColor = true;
+            this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(7, 46);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(135, 23);
+            this.button7.TabIndex = 10;
+            this.button7.Text = "Laser";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_2);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -465,6 +490,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TrackBar fovSlider;
+        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.Button button7;
     }
 }
 
