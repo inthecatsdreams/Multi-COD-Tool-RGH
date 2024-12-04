@@ -102,6 +102,7 @@ namespace JTAGTool
         private void button4_Click(object sender, EventArgs e)
         {
             console.SetMemory(0x82259BC8, new byte[] { 0x60, 0x00, 0x00, 0x00 });
+            xboxConsole.CallVoid(0x8242FB70, new object[] { -1, 0, "; \"no recoil given\"" });
         }
 
         
@@ -109,6 +110,7 @@ namespace JTAGTool
         private void button6_Click(object sender, EventArgs e)
         {
             console.SetMemory(0xC3786FD8, new byte[] { 0x00, 0x0F, 0x42, 0x40});
+            xboxConsole.CallVoid(0x8242FB70, new object[] { -1, 0, "; \"max money given\"" });
         }
 
        
@@ -130,19 +132,23 @@ namespace JTAGTool
                         console.SetMemory(addresses[i], new byte[] { 0x27, 0x0F });
                     }
                 }
-                else if (checkBox2.Checked) // BO I
+                if (checkBox2.Checked) // BO I
                 {
-                    console.SetMemory(0xC35126DC, new    byte[] { 0x64 });
+                    console.SetMemory(0xC35126DC, new byte[] { 0x64 });
+                    
                 }
-                else if (checkBox3.Checked) // BO I
+                if (checkBox3.Checked) // BO I
                 {
-                    uint[] addresses = { 0xC3381BE8, 0xC3381BF8, 0xC3381C00 };
-                    for(int i =  0; i < addresses.Length; i++)
-                    {
-                        console.SetMemory(addresses[i], new byte[] { 0x27, 0x0F });
-                    }
+                    //uint[] addresses = { 0xC3381BE8, 0xC3381BF8, 0xC3381C00 };
+                    uint firstWeapon = 0xC3381BE8;
+                    uint secondWeapon = 0xC3381BF8;
+                    uint thirdWeapon = 0xC3381C00; // mule kick
+                    console.SetMemory(firstWeapon, new byte[] { 0x64 });
+                    console.SetMemory(secondWeapon, new byte[] { 0x64 });
+                    console.SetMemory(thirdWeapon, new byte[] { 0x64});
+
                 }
-                else if (checkBox4.Checked)
+                if (checkBox4.Checked)
                 {
                     uint[] adresses = { 0xC458B28C, 0xC458B270 };
                     for(int i =0; i < adresses.Length; i++)
@@ -150,7 +156,7 @@ namespace JTAGTool
                         console.SetMemory(adresses[i], new byte[] { 0x00,0xFF,0xFF, 0xFF });
                     }
                 }
-                else if (checkBox5.Checked)
+                if (checkBox5.Checked)
                 {
                     console.SetMemory(0xC470A44C, new byte[] { 0x00, 0xFF,0xFF, 0xFF  });
                 }
@@ -160,7 +166,7 @@ namespace JTAGTool
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-
+            xboxConsole.CallVoid(0x8242FB70, new object[] { -1, 0, "; \"infinite ammo ON\"" });
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -174,11 +180,7 @@ namespace JTAGTool
 
         }
 
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
-        {
-            
-        }
-
+    
         private void button3_Click_1(object sender, EventArgs e)
         {
             console.SetMemory(0xC458CCBC, BitConverter.GetBytes(999999));
@@ -247,10 +249,31 @@ namespace JTAGTool
             uint laser = 0x82255E1C;
             console.SetMemory(laser, new byte[] { 0x43, 0x11, 0x00, 0x01 });
         }
+        public void sendText(string text)
+        {
+            
+            
+        }
 
         private void checkBox6_CheckedChanged(object sender, EventArgs e)
         {
             xboxConsole.WriteBool(0x823229D0, true);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            xboxConsole.WriteFloat(0x82085654, 500);
+            xboxConsole.WriteFloat(0x82003FD4, 0);
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button12_Click_1(object sender, EventArgs e)
+        {
+            xboxConsole.WriteFloat(0x82002B60, 1000);
         }
 
         private void button10_Click(object sender, EventArgs e)
