@@ -141,22 +141,27 @@ namespace JTAGTool
                 {
                     //uint[] addresses = { 0xC3381BE8, 0xC3381BF8, 0xC3381C00 };
                     uint firstWeapon = 0xC3381BE8;
+                    uint akimboAmmo = 0xC3381C08;
                     uint secondWeapon = 0xC3381BF8;
                     uint thirdWeapon = 0xC3381C00; // mule kick
                     console.SetMemory(firstWeapon, new byte[] { 0x64 });
                     console.SetMemory(secondWeapon, new byte[] { 0x64 });
                     console.SetMemory(thirdWeapon, new byte[] { 0x64});
-
+                    console.SetMemory(akimboAmmo, new byte[] { 0x64 });
+                    //tried to do a for loop for this one but didnt work xD
                 }
                 if (checkBox4.Checked)
                 {
-                    uint[] adresses = { 0xC458B28C, 0xC458B270 };
-                    for(int i =0; i < adresses.Length; i++)
+                    console.SetMemory(0xC458B28C, new byte[] { 0x64 });
+                    console.SetMemory(0xC458B270, new byte[] { 0x64 });
+                    console.SetMemory(0xC458B238, new byte[] { 0x64 });
+                    //uint[] adresses = { 0xC458B28C, 0xC458B270, 0xC458B238 };
+                    /*for(int i =0; i < adresses.Length; i++)
                     {
                         console.SetMemory(adresses[i], new byte[] { 0x00,0xFF,0xFF, 0xFF });
-                    }
+                    }*/
                 }
-                if (checkBox5.Checked)
+                if (checkBox5.Checked) // god mode WaW
                 {
                     console.SetMemory(0xC470A44C, new byte[] { 0x00, 0xFF,0xFF, 0xFF  });
                 }
@@ -233,10 +238,7 @@ namespace JTAGTool
             console.SetMemory(points, BitConverter.GetBytes(999999));
         }
 
-        private void fovSlider_Scroll(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void button7_Click_1(object sender, EventArgs e)
         {
